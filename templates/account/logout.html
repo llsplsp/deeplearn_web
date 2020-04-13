@@ -1,0 +1,28 @@
+{% load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width",initial-scale="1">
+    <title>退出登录</title>
+    <link rel="stylesheet" href="{% static "/css/bootstrap.css" %}">
+</head>
+
+<body style="background: #f0efd0;">
+{% block content %}
+    <div class="container">
+        <div class="row text-center vertical-middle-sm login_title">
+            <img src="{% static 'images/logout.jpg' %}" width="400px" height="300px"/>
+        </div>
+
+        <div class="row text-center vertical-middle-sm">
+            <h3>您已成功退出登录</h3>
+            <h4>你可以选择<a href="{% url 'account:user_login' %}">再次登录</a></h4>
+        </div>
+
+    </div>
+     {% include 'footer_buttom.html' %}
+{% endblock %}
+</body>
+</html>

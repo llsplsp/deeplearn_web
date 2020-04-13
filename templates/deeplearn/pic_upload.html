@@ -1,0 +1,88 @@
+{% load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>野生动物物种识别系统</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="../../static/js/jquery-3.3.1.js"></script>
+    <script src="../../static/js/test.js"></script>
+    <style>
+    .blank{ clear:both; overflow:hidden; display:block; overflow:hidden;}
+</style>
+</head>
+<body style="background: #f0efd0">
+<div class="container">
+    <div class="row text-center">
+        <h3>欢迎进入野生动物物种识别系统，请上传您需要识别的物种图片</h3>
+    </div>
+    <form id="uploadForm" action='.' method="post" enctype="multipart/form-data">
+    <div id="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="upload_main">
+                <div class="upload_choose">
+                    <input id="img_file" type="file" onchange="showImg()" accept = 'image/*'
+                           size="30" name="img" required="required">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 text-center">
+            图片区：
+            <div class="row ">
+                {% if new_img  == None %}{# 默认图片 #}
+                    <img src="{% static 'images/IMAG0134.JPG' %}" id="img_id" style="width: 60%;width: 60%">
+                {% else %}
+                    <img src="../../media/{{ new_img }}" id="img_id" style="width: 60%;width: 60%">
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            识别结果区：
+            <div class="row text-left">
+                识别结果：
+                <h3 style="color: red">
+                    {{ result }}
+                </h3>
+            </div>
+            <div class="row">
+                <br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/><br/><br/><br/>
+                <br/>
+            </div>
+            <div class="row">
+                <p>注：结果仅供参考，不做任何法律依据。</p>
+            </div>
+            <div class="row">
+
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-success btn-sm">开始识别</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-danger btn-sm">询问专家</a>
+
+            </div>
+        </div>
+
+    </div>
+    </form>
+</div>
+<span class ="blank" style="height:100px;"></span>
+</body>
+<script>
+    function showImg(){
+        var file =  document.getElementById('img_file').files[0];
+        var re = new FileReader();
+        re.readAsDataURL(file);
+        re.onload = function(re){
+            $('#img_id').attr("src", re.target.result);
+        }
+    }
+</script>
+{% include "footer.html" %}
+</html>
+

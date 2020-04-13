@@ -1,0 +1,36 @@
+{% load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width",initial-scale="1">
+    <title>{% block title %}成绩不合格{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "/css/bootstrap.css" %}">
+</head>
+<body style="background: #f0efd0" class="text-center">
+    <div class="container">
+        <div class="row">
+            <br/><br/>
+        </div>
+        <div class="row">
+            <h4>
+                您的成绩为<b style="color: red">{{ mygrade }}</b>分，成绩不合格，等级提升失败，请重新答题。
+            </h4>
+        </div>
+        <div class='row'>
+        <br/> <br/> <br/>
+        </div>
+        <hr>
+        <div class="row">
+            <p id="demo"></p>
+        </div>
+        <div class="row">
+            <a class="btn btn-success btn-lg" href="{% url 'classmanage:class_manage' %}">
+                重新开始答题
+            </a>
+        </div>
+    </div>
+</body>
+{% include "footer_buttom.html" %}
+</html>

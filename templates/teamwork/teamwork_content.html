@@ -1,0 +1,70 @@
+{% include 'header.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}工作概况{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/pygments-css-master/colorful.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <script src="{% static 'js/layer.js' %}"></script>
+<style>
+    .blank{ clear:both; overflow:hidden; display:block; overflow:hidden;}
+</style>
+</head>
+<body style="background: #f0efd0;">
+<div class="container">
+    <div class="row text-center vertical-middle-sm">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h1>{{ teamwork.title }}</h1>
+            <hr/>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <p class="text-right">
+                <span>作者：{{ teamwork.author.username }}</span>
+                <span style="margin-right: 50px"> 最后更新时间：{{ publish }}</span>
+                <span>浏览总数：<i class='glyphicon glyphicon-eye-open'></i> {{ teamwork.total_views }}</span>
+            </p>
+            <br/>
+            <div class="text-justify">
+                {{ teamwork.body|safe }} {# safe表示这一段字符不需要进行转义了。#}
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row text-center">
+        {% if userinfo_all.userClass == '3' %}
+            <a class="btn btn-success btn-sm" href="{% url 'teamwork:teamwork_update' teamwork.id %}">修改</a>
+            <a class="btn btn-danger btn-sm" onclick="confirm_delete()">删除</a>
+        {% endif %}
+        <a class="btn btn-success btn-sm" href="{% url 'teamwork:team_work' %}">返回上一页</a>
+    </div>
+</div>
+<span class ="blank" style="height:100px;"></span>
+{% include 'back_to_top_func.html' %}
+</body>
+<script>
+    // 删除文章的函数
+    function confirm_delete() {
+        // 调用layer弹窗组件
+        layer.open({
+            // 弹窗标题
+            title: "确认删除",
+            // 正文
+            content: "确认删除这篇文章吗？",
+            // 点击确定按钮后调用的回调函数
+            yes: function(index, layero) {
+                // 指定应当前往的 url
+                location.href='{% url 'teamwork:teamwork_delete' teamwork.id %}'
+            },
+        })
+    }
+</script>
+</html>
+{% include "footer.html" %}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% extends "base_buttom.html" %}
+{% load static %}
+{% block title %}
+    {% if userinfo_all.userClass == '0' %}
+        野生动物物种识别系统--用户
+    {% elif userinfo_all.userClass == '1' %}
+        野生动物物种识别系统--志愿者
+    {% elif userinfo_all.userClass == '2' %}
+        野生动物物种识别系统--专家
+    {% elif userinfo_all.userClass == '3' %}
+        野生动物物种识别系统--管理员
+    {% else %}
+        野生动物物种识别系统--游客
+    {% endif %}
+{% endblock %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/icon_back.css' %}">
+    <div class="row text-center vertical-middle-sm login_title">
+        系统公告：欢迎{{ user.username }}使用野生动物物种识别系统.
+    </div>
+    <div class="row text-center vertical-middle-sm">
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>
+    <div class="row text-center vertical-middle-sm">
+        <div class="col-sm-6 col-md-2">
+            <div>
+                <a href="{% url 'teamwork:team_work' %}">
+                <img class="img-circle icon_back" src="{% static 'images/icon_home/1.jpg' %}" alt=""/>
+                <div class="caption">
+                    <h6 class="login_title">工作概况</h6>
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-2">
+            <div>
+                <img class="img-circle icon_back" src="{% static 'images/icon_home/2.jpg' %}" alt=""/>
+                <div class="caption">
+                    <h6 class="login_title">新闻中心</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-2">
+            <div>
+                <a href="{% url 'deeplearn:pic_upload' %}">
+                <img class="img-circle icon_back" src="{% static 'images/icon_home/7.jpg' %}" alt=""/>
+                <div class="caption">
+                    <h6 class="login_title">物种识别</h6>
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-2">
+            <div>
+                <img class="img-circle icon_back" src="{% static 'images/icon_home/8.jpg' %}" alt=""/>
+                <div class="caption">
+                    <h6 class="login_title">当前收录</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-2">
+            <div>
+                <a href="{% url 'talk:user_talk' %}">
+                <img class="img-circle icon_back" src="{% static 'images/icon_home/5.jpg' %}" alt=""/>
+                <div class="caption">
+                    <h6 class="login_title">留言互动</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-2">
+            <div>
+                <img class="img-circle icon_back" src="{% static 'images/icon_home/6.jpg' %}" alt=""/>
+                <div class="caption">
+                    <h6 class="login_title">关于我们</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+<script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>

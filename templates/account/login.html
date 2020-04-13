@@ -1,0 +1,50 @@
+{% extends "account/login_back.html" %}
+{% load static %}
+{% block title %}
+用户登录界面
+{% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="{% static 'js/csrf.js' %}"></script>
+    <div class="row text-center vertical-middle-sm">
+        <h2 class="login_title" >欢迎使用野生动物物种识别系统</h2>
+        <marquee id="login_title1">欢迎使用野生动物物种识别系统,本设计是基于深度学习的物种识别系统，欢迎指正留言。联系方式：18380537919</marquee>
+
+        <form class="form-horizontal" action="." method="post">{% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.password.id_for_label }}" class="col-md-5 control-label"
+                       style="color: red">
+                    <span  class="glyphicon glyphicon-user"></span>
+                    用户名
+                </label>
+                <div class="col-md-6 text-left">{{ form.username}}</div>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password.id_for_label }}" class="col-md-5 control-label"
+                       style="color: blue">
+
+                    <span  class="glyphicon glyphicon-ok"></span>
+                    密&nbsp;&nbsp;码
+                </label>
+                <div class="col-md-6 text-left">{{ form.password }}</div>
+            </div>
+            <div class="row">
+            </div>
+
+            <div class="row login_title">
+                第三方登录
+                <a href="http://127.0.0.1:8000/login/weibo"> 微博</a>
+                QQ
+
+            </div>
+            <br/>
+            <div class="row">
+                <input type="submit" class="btn btn-success btn-sm" value="登录">&nbsp;
+                <a href="{% url "account:user_register" %}" class="btn btn-success btn-sm">注册</a>
+            </div>
+            <div class="row">
+                <P class="login_title"><br/>忘记密码？<br/>点击这里<a href="{% url "account:password_reset" %}">重置密码。</a></P>
+            </div>
+        </form>
+    </div>
+{% endblock %}

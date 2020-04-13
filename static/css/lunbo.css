@@ -1,0 +1,45 @@
+
+.lunbo{
+    background-image: url("/static/images/home/1.JPG");
+    background-repeat:no-repeat;
+    display: block;
+    height: auto;
+    max-width: 100%  ;
+    background-position: center;
+    background-size: cover;
+
+    animation-name:myfirst;
+    animation-duration:25s;
+    /*变换时间*/
+    animation-delay:5s;
+    /*动画开始时间*/
+    animation-iteration-count:infinite;
+    /*下一周期循环播放*/
+    animation-play-state:running;
+    /*动画开始运行*/
+}
+@keyframes myfirst
+{
+    0%   {background-image: url("/static/images/home/1.JPG");
+          background-repeat:no-repeat;}
+
+    20%  {background-image: url("/static/images/home/2.JPG");
+          background-repeat:no-repeat;}
+
+    40%  {background-image: url("/static/images/home/3.JPG");
+          background-repeat:no-repeat;}
+
+    60% {background-image: url("/static/images/home/4.JPG");
+          background-repeat:no-repeat;}
+    80% {background-image: url("/static/images/home/5.JPG");
+          background-repeat:no-repeat;}
+    100% {background-image: url("/static/images/home/6.JPG");
+          background-repeat:no-repeat;}
+}
+.form{background: rgba(255,255,255,0.2);width:400px;margin:120px auto;}
+
+/*阴影*/
+.fa{display: inline-block;top: 27px;left: 6px;position: relative;color: #ccc;}
+input[type="text"],input[type="password"]{padding-left:26px;}
+.checkbox{padding-left:21px;}
+

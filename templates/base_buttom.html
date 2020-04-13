@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width",initial-scale="1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "/css/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static '/css/lunbo.css' %}">
+</head>
+<body style="background: #f0efd0" onload=alert("欢迎{{ user.username }}使用野生动物物种识别系统。")>
+    <div class="lunbo">
+        {% include 'header.html' %}
+        {% block content %}{% endblock %}
+        {% include "footer_buttom.html" %} {# 固定在底部 #}
+        {% block javascript %}{% endblock %}
+    </div>
+</body>
+</html>

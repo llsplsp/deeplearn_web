@@ -1,0 +1,72 @@
+{% load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width",initial-scale="1">
+    <title>{% block title %}完善个人信息{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "/css/bootstrap.css" %}">
+<style>
+    .blank{ clear:both; overflow:hidden; display:block; overflow:hidden;}
+</style>
+</head>
+<body background='{% static 'images/back.jpeg' %}' style="background-position: center; background-repeat:no-repeat;">
+<div class="container text-center vertical-middle-sm">
+    <h1 class="login_title">完善个人信息</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-horizontal" action="." method="post">{% csrf_token %}
+                <div class="row login_title">
+                    <div class="col-md-4 text-right"><span>用户名:</span></div>
+                    <div class="col-md-8 text-left">{{user.username}}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 text-right login_title"><span>邮箱:</span></div>
+                    <div class="col-md-8 text-left">{{user_form.email}}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 text-right login_title"><span>联系方式:</span></div>
+                    <div class="col-md-8 text-left">{{userinfo_form.phone}}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 text-right login_title"><span>工作单位:</span></div>
+                    <div class="col-md-8 text-left">{{userinfo_form.company}}</div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4 text-right login_title"><span>职业:</span></div>
+                    <div class="col-md-8 text-left">{{userinfo_form.profession}}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 text-right login_title"><span>地址:</span></div>
+                    <div class="col-md-8 text-left">{{userinfo_form.address}}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 text-right login_title"><span>个人介绍:</span></div>
+                    <div class="col-md-8 text-left">{{userinfo_form.aboutme}}</div>
+                </div>
+
+                <div class="row">
+                    <input type="submit" class="btn btn-success btn-sm" value="保存修改">
+                    &nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-success btn-sm" href="{% url 'account:my_information' %}">返回</a>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <p>picture</p>
+        </div>
+    </div>
+</div>
+<span class ="blank" style="height:100px;"></span>
+</body>
+{% include "footer_buttom.html" %}
+</html>
+

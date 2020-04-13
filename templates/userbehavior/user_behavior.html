@@ -1,0 +1,62 @@
+{% load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看用户行为</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/layer.js' %}"></script>
+</head>
+<body style="background: #f0efd0">
+<div class="container text-center">
+    <div class="row">
+        <h3>用户行为记录</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th  class="text-center">编号</th>
+                    <th  class="text-center">用户名</th>
+                    <th  class="text-center">角色</th>
+                    <th  class="text-center">加入时间</th>
+                    <th  class="text-center">最后登录时间</th>
+                    <th  class="text-center">查看更多行为</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for user1,user2 in all %}
+                        <tr>
+                            <td class="text-center">{{ user2.user_id }}</td>
+                            <td class="text-center">{{ user1.username }}</td>
+
+                            {% if user2.userClass == '1'%}
+                                <td class="text-center">志愿者</td>
+                            {% elif user2.userClass == '2'%}
+                                <td class="text-center">专家</td>
+                            {% elif user2.userClass == '3'%}
+                                <td class="text-center">管理员</td>
+                            {% else%}
+                                <td class="text-center">普通用户</td>
+                            {% endif %}
+                            <td class="text-center">{{ user1.date_joined }}</td>
+                            <td class="text-center">{{ user1.last_login }}</td>
+                            <td class="text-center">
+                                <a class="btn btn-success btn-sm" href='#'>更多行为</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+</body>
+{% include 'footer.html' %}
+</html>

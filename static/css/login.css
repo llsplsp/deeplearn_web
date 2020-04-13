@@ -1,0 +1,19 @@
+.login_title{
+    color: white;
+    text-decoration: none;
+}
+#login_title1{
+    color: white;
+}
+.home_p{
+    color: white;
+}
+a{
+    text-decoration:none;
+}
+a:hover{
+    color:white }
+.gonggao{
+    background: #00FF00;
+    color: white;
+}

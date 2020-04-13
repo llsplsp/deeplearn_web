@@ -1,0 +1,40 @@
+{% include 'header.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width",initial-scale="1">
+    <title>{% block title %}修改头像{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "/css/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "/css/login.css" %}">
+</head>
+<body background='{% static 'images/back.jpeg' %}' style="background-position: center; background-repeat:no-repeat;">
+<div class="container">
+    <div class="row text-center">
+        <h1 class="login_title">用户修改头像</h1>
+    </div>
+    <br>
+    <div class="row text-center">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 login_title ">
+        <form action="." method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <h4>用户名:{{user.username}}</h4>
+                <div>
+                    <input type="file" class="form-control-file center-block " name="photo">
+                </div>
+                <br/>
+                <button type="submit" class="btn btn-success btn-sm">上传头像</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="btn btn-success btn-sm" href="{% url 'account:my_information' %}">返回</a>
+            </div>
+        </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+</body>
+{% include 'footer_buttom.html' %}
+</html>

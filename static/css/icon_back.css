@@ -1,0 +1,10 @@
+.icon_back{
+    cursor: pointer;
+    transition: all 0.4s;
+
+}
+.icon_back:hover{
+    transform: scale(1.4);
+    /*-ms-transform:scale(1.4) rotate(360deg); !* IE 9 *!*/
+    /*-webkit-transform:scale(1.4) rotate(360deg); !* Opera, Chrome, and Safari *!*/
+}

@@ -1,0 +1,40 @@
+{% include 'header.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}修改工作概况{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/pygments-css-master/colorful.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<style>
+    .blank{ clear:both; overflow:hidden; display:block; overflow:hidden;}
+</style>
+</head>
+<body style="background: #f0efd0;">
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="title">标题</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{ teamwork.title }}" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="body">正文内容</label>
+                    <textarea type="text" class="form-control" id="body" name="body" rows="12" required="required">{{ teamwork.body }}</textarea>
+                </div>
+
+
+                <button type="submit" class="btn btn-danger btn-sm" onclick="">完成</button>
+                <a class="btn btn-success btn-sm" href="{% url 'teamwork:team_work' %}">返回</a>
+            </form>
+        </div>
+    </div>
+</div>
+<span class ="blank" style="height:100px;"></span>
+</body>
+</html>
+{% include "footer.html" %}

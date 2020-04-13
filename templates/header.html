@@ -1,0 +1,213 @@
+{% load static %}
+<!-- 引入notifications的模板标签 -->
+{% load notifications_tags %}
+{% notifications_unread as unread_count %}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<nav class="navbar navbar-inverse touming " role="navigation">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <div class="container-fluid" >
+        <div class="navbar-header">
+            <div class="navbar-inner text-success">
+               <a class="brand" href="{% url 'account:home' %}">
+                   <img src="{% static 'images/logo.jpg' %}" width="50px" height="50px"/>
+               </a>
+            </div>
+        </div>
+    <div>
+        <ul class="nav navbar-nav">
+            <li><a href="{% url 'account:home' %}">野生动物物种识别系统 </a></li>
+            <li class="dropdown">
+                <a href="{% url 'account:home' %}" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-align-left" >首页</span><b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'teamwork:team_work' %}">工作概况</a></li>
+                    <li class="divider"></li>
+                    {% if userinfo_all.userClass == '3' %}
+                        <li><a href="{% url 'teamwork:teamwork_create' %}">添加工作概况</a></li>
+                        <li class="divider"></li>
+                    {% endif %}
+
+                </ul>
+            </li>
+            {% if userinfo_all.userClass != '3' %}
+                <li class="dropdown" >
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-sunglasses" aria-hidden="true">专家库</span><b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'experts:user_professor' %}">专家介绍</a></li>
+                    <li class="divider"></li>
+                    <li><a href="{% url 'experts:user_volunteer' %}">志愿者名录</a></li>
+                    <li class="divider"></li>
+                </ul>
+            </li>
+            {% endif %}
+            <li class="dropdown" >
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true">物种识别</span><b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'deeplearn:pic_upload' %}">物种鉴定</a></li>
+                    <li class="divider"></li>
+                    {% if userinfo_all.userClass == '1' or userinfo_all.userClass == '2' %}
+                        <li><a href="#">图片审核</a></li>{# 普通用户上传进行识别的图片，需要先筛选才能扩充数据集 #}
+                        <li class="divider"></li>
+                        <li><a href="#">上传新物种</a></li>{# 志愿者或专家扩充数据集 #}
+                        <li class="divider"></li>
+                    {% endif %}
+                        <li><a href="#">当前收录</a></li>
+                        <li class="divider"></li>
+
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true">数据统计</span>
+                    {% if unread_count %}
+                        <svg viewBox="0 0 8 8"
+                            width="8px"
+                            height="8px">
+                        <circle cx="4"
+                                cy="4"
+                                r="4"
+                                fill="#ff6b6b"
+                                ></circle>
+                        </svg>
+                    {% endif %}
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                {% if userinfo_all.userClass == '0' or userinfo_all.userClass == '1' or userinfo_all.userClass == '2' or userinfo_all.userClass == '3'%}
+                    <!-- 新增代码，通知计数 -->
+                    <li>
+                        <a class="dropdown-item" href="{% url "notice:list" %}">消息通知
+                        {% if unread_count %}
+                            <span class="badge badge-danger" style="background-color: red">{{ unread_count }}</span>
+                        {% endif %}
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="{% url 'userbehavior:user_behavior' %}">日志记录</a></li>
+                    <li class="divider"></li>
+                {% endif %}
+                    <li><a href="">识别历史</a></li>
+                    <li class="divider"></li>
+
+                </ul>
+            </li>
+            <li class="dropdown" >
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-send" aria-hidden="true">互动留言</span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'talk:user_talk' %}">参与交流</a></li>
+                    <li class="divider"></li>
+                    {% if userinfo_all.userClass == '0' or userinfo_all.userClass == '1' or userinfo_all.userClass == '2' or userinfo_all.userClass == '3'%}
+                    <!-- 新增代码，通知计数 -->
+                    <li>
+                        <a class="dropdown-item" href="{% url "notice:list" %}">我的回复
+                        {% if unread_count %}
+                            <span class="badge badge-danger" style="background-color: red">{{ unread_count }}</span>
+                        {% endif %}
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                {% endif %}
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true">关于我们</span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">团队信息</a></li>
+                    <li class="divider"></li>
+                    {% if userinfo_all.userClass == '3' %}
+                    <li><a href="#">编辑团队信息</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">审核专家信息</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">审核志愿者名录</a></li>
+                    <li class="divider"></li>
+                    {% endif %}
+
+                </ul>
+            </li>
+            {% if userinfo_all.userClass == '3' %}
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-cloud" aria-hidden="true">安全管理</span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="">管理游客上传照片</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">审核志愿者上传图片</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">审核专家上传图片</a></li>
+                    <li class="divider"></li>
+                    <li><a href="http://localhost:8000/admin/">进入终端后台管理</a></li>
+                    <li class="divider"></li>
+
+                </ul>
+            </li>
+            {% endif %}
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true">用户管理</span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    {% if userinfo_all.userClass == '3' %}
+                    <li><a href="{% url 'account:manage_user' %}">用户管理</a></li>
+                    <li class="divider"></li>
+                    {% endif %}
+                    {% if userinfo_all.userClass == '0' or userinfo_all.userClass == '1' %}
+                    <li><a href="{% url 'classmanage:class_manage' %}">等级管理</a></li>
+                    <li class="divider"></li>
+                    {% endif %}
+                    {% if userinfo_all.userClass == None %}
+                        <li><a href="{% url 'account:user_login' %}">点击登录</a></li>
+                        <li class="divider"></li>
+                    {% else %}
+                        <li><a href="">积分奖励</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'account:password_change' %}">修改密码</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'account:my_information' %}">个人信息</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'account:user_logout' %}">退出登录</a></li>
+                        <li class="divider"></li>
+                    {% endif %}
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    <marquee><span>
+                         {% if userinfo_all.userClass == '0' %}
+                             角色:普通用户
+                         {% elif userinfo_all.userClass == '1' %}
+                             角色:志愿者
+                         {% elif userinfo_all.userClass == '2' %}
+                             角色:专家
+                         {% endif %}
+
+                    </span>
+                    </marquee>
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+    </div>
+</nav>
+
+<script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>

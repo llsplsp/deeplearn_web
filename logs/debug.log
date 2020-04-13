@@ -1,0 +1,1800 @@
+
+Internal Server Error: /talk/talk-user/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\deepLearn_web\talk\views.py", line 41, in userTalk
+    'userinfo_all': userinfo_all, 'comments': comments,'search':search})
+  File "E:\deepLearn_web\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\mptt\templatetags\mptt_tags.py", line 257, in render
+    roots = cache_tree_children(queryset)
+  File "E:\deepLearn_web\venv\lib\site-packages\mptt\templatetags\mptt_tags.py", line 236, in cache_tree_children
+    return get_cached_trees(queryset)
+  File "E:\deepLearn_web\venv\lib\site-packages\mptt\utils.py", line 247, in get_cached_trees
+    _('Node %s not in depth-first order') % (type(queryset),)
+ValueError: Node <class 'django.core.paginator.Page'> not in depth-first order
+"GET /talk/talk-user/?page=2&search= HTTP/1.1" 500 143026
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 41, in _get_site_by_request
+    SITE_CACHE[host] = self.get(domain__iexact=host)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\sites.py", line 398, in login
+    return LoginView.as_view(**defaults)(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\auth\views.py", line 61, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\edit.py", line 133, in get
+    return self.render_to_response(self.get_context_data())
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\auth\views.py", line 95, in get_context_data
+    current_site = get_current_site(self.request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\shortcuts.py", line 13, in get_current_site
+    return Site.objects.get_current(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 62, in get_current
+    return self._get_site_by_request(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 47, in _get_site_by_request
+    SITE_CACHE[domain] = self.get(domain__iexact=domain)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+"GET /admin/login/?next=/admin/ HTTP/1.1" 500 165857
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 41, in _get_site_by_request
+    SITE_CACHE[host] = self.get(domain__iexact=host)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\sites.py", line 398, in login
+    return LoginView.as_view(**defaults)(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\auth\views.py", line 61, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\edit.py", line 133, in get
+    return self.render_to_response(self.get_context_data())
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\auth\views.py", line 95, in get_context_data
+    current_site = get_current_site(self.request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\shortcuts.py", line 13, in get_current_site
+    return Site.objects.get_current(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 62, in get_current
+    return self._get_site_by_request(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 47, in _get_site_by_request
+    SITE_CACHE[domain] = self.get(domain__iexact=domain)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+"GET /admin/login/?next=/admin/ HTTP/1.1" 500 165857
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 41, in _get_site_by_request
+    SITE_CACHE[host] = self.get(domain__iexact=host)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\sites.py", line 398, in login
+    return LoginView.as_view(**defaults)(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\auth\views.py", line 61, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\edit.py", line 133, in get
+    return self.render_to_response(self.get_context_data())
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\auth\views.py", line 95, in get_context_data
+    current_site = get_current_site(self.request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\shortcuts.py", line 13, in get_current_site
+    return Site.objects.get_current(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 62, in get_current
+    return self._get_site_by_request(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 47, in _get_site_by_request
+    SITE_CACHE[domain] = self.get(domain__iexact=domain)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+"GET /admin/login/?next=/admin/ HTTP/1.1" 500 165697
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 41, in _get_site_by_request
+    SITE_CACHE[host] = self.get(domain__iexact=host)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\sites.py", line 398, in login
+    return LoginView.as_view(**defaults)(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\auth\views.py", line 61, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\edit.py", line 133, in get
+    return self.render_to_response(self.get_context_data())
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\auth\views.py", line 95, in get_context_data
+    current_site = get_current_site(self.request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\shortcuts.py", line 13, in get_current_site
+    return Site.objects.get_current(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 62, in get_current
+    return self._get_site_by_request(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 47, in _get_site_by_request
+    SITE_CACHE[domain] = self.get(domain__iexact=domain)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+"GET /admin/login/?next=/admin/ HTTP/1.1" 500 165697
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 41, in _get_site_by_request
+    SITE_CACHE[host] = self.get(domain__iexact=host)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\sites.py", line 398, in login
+    return LoginView.as_view(**defaults)(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\auth\views.py", line 61, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\edit.py", line 133, in get
+    return self.render_to_response(self.get_context_data())
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\auth\views.py", line 95, in get_context_data
+    current_site = get_current_site(self.request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\shortcuts.py", line 13, in get_current_site
+    return Site.objects.get_current(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 62, in get_current
+    return self._get_site_by_request(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 47, in _get_site_by_request
+    SITE_CACHE[domain] = self.get(domain__iexact=domain)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+"GET /admin/login/?next=/admin/ HTTP/1.1" 500 165832
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 41, in _get_site_by_request
+    SITE_CACHE[host] = self.get(domain__iexact=host)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\sites.py", line 398, in login
+    return LoginView.as_view(**defaults)(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\auth\views.py", line 61, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\edit.py", line 133, in get
+    return self.render_to_response(self.get_context_data())
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\auth\views.py", line 95, in get_context_data
+    current_site = get_current_site(self.request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\shortcuts.py", line 13, in get_current_site
+    return Site.objects.get_current(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 62, in get_current
+    return self._get_site_by_request(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 47, in _get_site_by_request
+    SITE_CACHE[domain] = self.get(domain__iexact=domain)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+"GET /admin/login/?next=/admin/ HTTP/1.1" 500 165697
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 41, in _get_site_by_request
+    SITE_CACHE[host] = self.get(domain__iexact=host)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\sites.py", line 398, in login
+    return LoginView.as_view(**defaults)(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\utils\decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\auth\views.py", line 61, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\generic\edit.py", line 133, in get
+    return self.render_to_response(self.get_context_data())
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\auth\views.py", line 95, in get_context_data
+    current_site = get_current_site(self.request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\shortcuts.py", line 13, in get_current_site
+    return Site.objects.get_current(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 62, in get_current
+    return self._get_site_by_request(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\sites\models.py", line 47, in _get_site_by_request
+    SITE_CACHE[domain] = self.get(domain__iexact=domain)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 399, in get
+    self.model._meta.object_name
+django.contrib.sites.models.Site.DoesNotExist: Site matching query does not exist.
+"GET /admin/login/?next=/admin/ HTTP/1.1" 500 165825
+Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 278, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 313, in _get_non_gfk_field
+    raise FieldDoesNotExist()
+django.core.exceptions.FieldDoesNotExist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 341, in result_list
+    'results': list(results(cl))}
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 318, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in __init__
+    super().__init__(*items)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 228, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 289, in lookup_field
+    attr = getattr(obj, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\fields.py", line 240, in __get__
+    rel_obj = ct.get_object_for_this_type(pk=pk_val)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\models.py", line 169, in get_object_for_this_type
+    return self.model_class()._base_manager.using(self._state.db).get(**kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 390, in get
+    clone = self.filter(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 841, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 859, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\fields\__init__.py", line 965, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '<property object at 0x000002AEFD37B638>'
+"GET /admin/notifications/notification/ HTTP/1.1" 500 427047
+Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 278, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 313, in _get_non_gfk_field
+    raise FieldDoesNotExist()
+django.core.exceptions.FieldDoesNotExist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 341, in result_list
+    'results': list(results(cl))}
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 318, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in __init__
+    super().__init__(*items)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 228, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 289, in lookup_field
+    attr = getattr(obj, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\fields.py", line 240, in __get__
+    rel_obj = ct.get_object_for_this_type(pk=pk_val)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\models.py", line 169, in get_object_for_this_type
+    return self.model_class()._base_manager.using(self._state.db).get(**kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 390, in get
+    clone = self.filter(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 841, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 859, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\fields\__init__.py", line 965, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '<property object at 0x000002AEFD37B638>'
+"GET /admin/notifications/notification/ HTTP/1.1" 500 427047
+Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 278, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 313, in _get_non_gfk_field
+    raise FieldDoesNotExist()
+django.core.exceptions.FieldDoesNotExist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 341, in result_list
+    'results': list(results(cl))}
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 318, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in __init__
+    super().__init__(*items)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 228, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 289, in lookup_field
+    attr = getattr(obj, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\fields.py", line 240, in __get__
+    rel_obj = ct.get_object_for_this_type(pk=pk_val)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\models.py", line 169, in get_object_for_this_type
+    return self.model_class()._base_manager.using(self._state.db).get(**kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 390, in get
+    clone = self.filter(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 841, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 859, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\fields\__init__.py", line 965, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '<property object at 0x000002AEFD37B638>'
+"GET /admin/notifications/notification/ HTTP/1.1" 500 427061
+Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 278, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 313, in _get_non_gfk_field
+    raise FieldDoesNotExist()
+django.core.exceptions.FieldDoesNotExist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 341, in result_list
+    'results': list(results(cl))}
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 318, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in __init__
+    super().__init__(*items)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 228, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 289, in lookup_field
+    attr = getattr(obj, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\fields.py", line 240, in __get__
+    rel_obj = ct.get_object_for_this_type(pk=pk_val)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\models.py", line 169, in get_object_for_this_type
+    return self.model_class()._base_manager.using(self._state.db).get(**kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 390, in get
+    clone = self.filter(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 841, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 859, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\fields\__init__.py", line 965, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '<property object at 0x000002AEFD37B638>'
+"GET /admin/notifications/notification/ HTTP/1.1" 500 427047
+Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 278, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 313, in _get_non_gfk_field
+    raise FieldDoesNotExist()
+django.core.exceptions.FieldDoesNotExist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 341, in result_list
+    'results': list(results(cl))}
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 318, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in __init__
+    super().__init__(*items)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 228, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 289, in lookup_field
+    attr = getattr(obj, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\fields.py", line 240, in __get__
+    rel_obj = ct.get_object_for_this_type(pk=pk_val)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\models.py", line 169, in get_object_for_this_type
+    return self.model_class()._base_manager.using(self._state.db).get(**kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 390, in get
+    clone = self.filter(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 841, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 859, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\fields\__init__.py", line 965, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '<property object at 0x000001B11BAFA8B8>'
+"GET /admin/notifications/notification/ HTTP/1.1" 500 427040
+Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 278, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 313, in _get_non_gfk_field
+    raise FieldDoesNotExist()
+django.core.exceptions.FieldDoesNotExist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 341, in result_list
+    'results': list(results(cl))}
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 318, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in __init__
+    super().__init__(*items)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 228, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 289, in lookup_field
+    attr = getattr(obj, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\fields.py", line 240, in __get__
+    rel_obj = ct.get_object_for_this_type(pk=pk_val)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\models.py", line 169, in get_object_for_this_type
+    return self.model_class()._base_manager.using(self._state.db).get(**kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 390, in get
+    clone = self.filter(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 841, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 859, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\fields\__init__.py", line 965, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '<property object at 0x000001B11BAFA8B8>'
+"GET /admin/notifications/notification/ HTTP/1.1" 500 426335
+Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 278, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 313, in _get_non_gfk_field
+    raise FieldDoesNotExist()
+django.core.exceptions.FieldDoesNotExist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 341, in result_list
+    'results': list(results(cl))}
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 318, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in __init__
+    super().__init__(*items)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 228, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 289, in lookup_field
+    attr = getattr(obj, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\fields.py", line 240, in __get__
+    rel_obj = ct.get_object_for_this_type(pk=pk_val)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\models.py", line 169, in get_object_for_this_type
+    return self.model_class()._base_manager.using(self._state.db).get(**kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 390, in get
+    clone = self.filter(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 841, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 859, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\fields\__init__.py", line 965, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '<property object at 0x000001B11BAFA8B8>'
+"GET /admin/notifications/notification/ HTTP/1.1" 500 426379
+Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 278, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 313, in _get_non_gfk_field
+    raise FieldDoesNotExist()
+django.core.exceptions.FieldDoesNotExist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 341, in result_list
+    'results': list(results(cl))}
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 318, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in __init__
+    super().__init__(*items)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 228, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 289, in lookup_field
+    attr = getattr(obj, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\fields.py", line 240, in __get__
+    rel_obj = ct.get_object_for_this_type(pk=pk_val)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\models.py", line 169, in get_object_for_this_type
+    return self.model_class()._base_manager.using(self._state.db).get(**kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 390, in get
+    clone = self.filter(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 841, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 859, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\fields\__init__.py", line 965, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '<property object at 0x000001B11BAFA8B8>'
+"GET /admin/notifications/notification/ HTTP/1.1" 500 426335
+Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 278, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 313, in _get_non_gfk_field
+    raise FieldDoesNotExist()
+django.core.exceptions.FieldDoesNotExist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 341, in result_list
+    'results': list(results(cl))}
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 318, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in __init__
+    super().__init__(*items)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 228, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 289, in lookup_field
+    attr = getattr(obj, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\fields.py", line 240, in __get__
+    rel_obj = ct.get_object_for_this_type(pk=pk_val)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\models.py", line 169, in get_object_for_this_type
+    return self.model_class()._base_manager.using(self._state.db).get(**kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 390, in get
+    clone = self.filter(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 841, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 859, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\fields\__init__.py", line 965, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '<property object at 0x000001B11BAFA8B8>'
+"GET /admin/notifications/notification/ HTTP/1.1" 500 426285
+Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 278, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 313, in _get_non_gfk_field
+    raise FieldDoesNotExist()
+django.core.exceptions.FieldDoesNotExist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 341, in result_list
+    'results': list(results(cl))}
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 318, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in __init__
+    super().__init__(*items)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 228, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 289, in lookup_field
+    attr = getattr(obj, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\fields.py", line 240, in __get__
+    rel_obj = ct.get_object_for_this_type(pk=pk_val)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\models.py", line 169, in get_object_for_this_type
+    return self.model_class()._base_manager.using(self._state.db).get(**kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 390, in get
+    clone = self.filter(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 841, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 859, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\fields\__init__.py", line 965, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '<property object at 0x000001B11BAFA8B8>'
+"GET /admin/notifications/notification/ HTTP/1.1" 500 426285
+Internal Server Error: /talk/talk-user/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\deepLearn_web\talk\views.py", line 41, in userTalk
+    'userinfo_all': userinfo_all, 'comments': comments,'search':search})
+  File "E:\deepLearn_web\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\mptt\templatetags\mptt_tags.py", line 257, in render
+    roots = cache_tree_children(queryset)
+  File "E:\deepLearn_web\venv\lib\site-packages\mptt\templatetags\mptt_tags.py", line 236, in cache_tree_children
+    return get_cached_trees(queryset)
+  File "E:\deepLearn_web\venv\lib\site-packages\mptt\utils.py", line 247, in get_cached_trees
+    _('Node %s not in depth-first order') % (type(queryset),)
+ValueError: Node <class 'django.core.paginator.Page'> not in depth-first order
+"GET /talk/talk-user/?page=2&search= HTTP/1.1" 500 142674
+Internal Server Error: /talk/talk-user/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\deepLearn_web\talk\views.py", line 41, in userTalk
+    'userinfo_all': userinfo_all, 'comments': comments,'search':search})
+  File "E:\deepLearn_web\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\mptt\templatetags\mptt_tags.py", line 257, in render
+    roots = cache_tree_children(queryset)
+  File "E:\deepLearn_web\venv\lib\site-packages\mptt\templatetags\mptt_tags.py", line 236, in cache_tree_children
+    return get_cached_trees(queryset)
+  File "E:\deepLearn_web\venv\lib\site-packages\mptt\utils.py", line 247, in get_cached_trees
+    _('Node %s not in depth-first order') % (type(queryset),)
+ValueError: Node <class 'django.core.paginator.Page'> not in depth-first order
+"GET /talk/talk-user/?page=2&search= HTTP/1.1" 500 142674
+Internal Server Error: /account/password-change/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\urls\base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\urls\resolvers.py", line 622, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'home' not found. 'home' is not a valid view function or pattern name.
+"GET /account/password-change/ HTTP/1.1" 500 164113
+Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 278, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 313, in _get_non_gfk_field
+    raise FieldDoesNotExist()
+django.core.exceptions.FieldDoesNotExist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 341, in result_list
+    'results': list(results(cl))}
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 318, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in __init__
+    super().__init__(*items)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 228, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 289, in lookup_field
+    attr = getattr(obj, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\fields.py", line 240, in __get__
+    rel_obj = ct.get_object_for_this_type(pk=pk_val)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\models.py", line 169, in get_object_for_this_type
+    return self.model_class()._base_manager.using(self._state.db).get(**kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 390, in get
+    clone = self.filter(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 841, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 859, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\fields\__init__.py", line 965, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '<property object at 0x0000022E963BA8B8>'
+"GET /admin/notifications/notification/ HTTP/1.1" 500 427044
+Internal Server Error: /account/password-change/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\defaulttags.py", line 442, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\urls\base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\urls\resolvers.py", line 622, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'home' not found. 'home' is not a valid view function or pattern name.
+"GET /account/password-change/ HTTP/1.1" 500 164199
+Internal Server Error: /admin/notifications/notification/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 278, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 313, in _get_non_gfk_field
+    raise FieldDoesNotExist()
+django.core.exceptions.FieldDoesNotExist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 156, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 154, in _get_response
+    response = response.render()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 341, in result_list
+    'results': list(results(cl))}
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 318, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in __init__
+    super().__init__(*items)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 228, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\admin\utils.py", line 289, in lookup_field
+    attr = getattr(obj, name)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\fields.py", line 240, in __get__
+    rel_obj = ct.get_object_for_this_type(pk=pk_val)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\contrib\contenttypes\models.py", line 169, in get_object_for_this_type
+    return self.model_class()._base_manager.using(self._state.db).get(**kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 390, in get
+    clone = self.filter(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 841, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\query.py", line 859, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1263, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1287, in _add_q
+    split_subq=split_subq,
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1225, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 20, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\lookups.py", line 70, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\db\models\fields\__init__.py", line 965, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '<property object at 0x0000022E963BA8B8>'
+"GET /admin/notifications/notification/ HTTP/1.1" 500 427055
+Internal Server Error: /complete/weibo/
+Traceback (most recent call last):
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\social_django\utils.py", line 49, in wrapper
+    return func(request, backend, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\social_django\views.py", line 33, in complete
+    *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\social_core\actions.py", line 45, in do_complete
+    user = backend.complete(user=user, *args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\social_core\backends\base.py", line 40, in complete
+    return self.auth_complete(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\social_core\utils.py", line 251, in wrapper
+    return func(*args, **kwargs)
+  File "E:\deepLearn_web\venv\lib\site-packages\social_core\backends\oauth.py", line 387, in auth_complete
+    self.process_error(self.data)
+  File "E:\deepLearn_web\venv\lib\site-packages\social_core\backends\oauth.py", line 378, in process_error
+    raise AuthCanceled(self, data.get('error_description', ''))
+social_core.exceptions.AuthCanceled: Authentication process canceled: user denied your request.
+"GET /complete/weibo/?error_uri=%2Foauth2%2Fauthorize&error=access_denied&error_description=user%20denied%20your%20request.&error_code=21330&state=pjeSDX2i3FbEhe2X1HP3qTZEOypwvlxM HTTP/1.1" 500 110313

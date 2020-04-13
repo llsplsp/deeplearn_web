@@ -1,0 +1,210 @@
+{% load static %}
+{% load my_filters_and_tags %} {# 加载自定义的过滤器 #}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>交流互动</title>
+    <script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="{% static 'js/layer.js' %}"></script>
+    <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
+    <style>
+        .blank{ clear:both; overflow:hidden; display:block; overflow:hidden;}
+    </style>
+    <script>
+        var t = new Date();
+    </script>
+</head>
+<body style="background: #f0efd0">
+<div class="container">
+    <div class="row text-center">
+        <h2>交流互动</h2>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+        {% if user.is_authenticated %}
+            <form action="." method="POST">{% csrf_token %}
+                <div class="form-group">
+                    <label for="body"><strong>请输入你想说的内容：</strong></label>
+{#                    <textarea type="text" class="form-control" id="body" name="body" rows="2" required></textarea>#}
+                    <div>
+                        {{ comment_form.media }}
+                        {{ comment_form.body }}
+                    </div>
+                </div>
+                <!-- 提交按钮 -->
+                <button type="submit" class="btn btn-success btn-sm">发送</button>
+            </form>
+            <br>
+            {% else %}
+                <h4 class="text-center">
+                    请<a href="{% url 'account:user_login' %}">登录</a>后参与互动
+                </h4>
+            {% endif %}
+
+            {% load mptt_tags %}
+            <!-- 显示评论，修改为多级评论 -->
+            <h5>共有{{ total.count }}条发言，期待你的参与哦!</h5>
+            <div>
+                <!-- 遍历树形结构 显示内容 -->
+                {% recursetree comments %}
+                <!-- 给 node 取个别名 comment -->
+                {% with comment=node %}
+                <div id="comment_elem_{{ comment.id }}"
+                 class="{% if comment.reply_to %} {# 如果是回复的人，布局向后缩进，形成层次 #}
+                            col-md-offset-1 col-md-11.5
+                        {% else %}
+                            col-md-12
+                        {% endif %}">
+                <hr>
+                <p>
+                <strong style="color: red">
+                    <img class="img-circle" src="{{ userinfo_all.photo.url }}" width="30px" height="30px">
+                    {{ comment.user }}用户
+                    <span style="color: green">
+{#                    {{ comment.created|date:"Y-m-d H:i:s" }}#}
+                        {{ comment.created|timesince_zh}}
+                </span>
+                </strong>
+                {% if comment.reply_to %}
+                <i class="far fa-arrow-alt-circle-right" style="color: cornflowerblue;"></i>
+                    &nbsp;回复：
+                    <strong style="color: blue">
+                        {{ comment.reply_to }}
+                    </strong>
+                {% endif %}
+            </p>
+            <div style="background-color:white">
+                {{ comment.body|safe }}
+            </div>
+            <div>
+            {% if userinfo_all.userClass == '3' %}
+                <a class="btn btn-success btn-sm" href="{% url 'talk:talk_delete' comment.id %}">删除评论</a>
+            {% endif %}
+
+
+             <!-- 加载 modal 的按钮 Modal是Bootstrap内置的弹窗 -->
+            {% if user.is_authenticated %}
+                <a type="button" class="btn btn-danger btn-sm text-muted"
+                        onclick="load_modal({{ comment.id }})">
+                    回复
+                </a>
+            {% else %}
+                <a class="btn btn-danger btn-sm text-muted"
+                   href="{% url 'account:user_login' %}">
+                        回复
+                </a>
+            {% endif %}
+            </div>
+            <!-- Modal模态框 弹出的内容 -->
+            <div class="modal fade" id="comment_{{ comment.id }}" tabindex="-1" role="dialog"
+                     aria-labelledby="CommentModalCenter" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content" style="height: 480px">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">回复 {{ comment.user }}：</h5>
+                        </div>
+                        <div class="modal-body" id="modal_body_{{ comment.id }}"></div>
+                    </div>
+                </div>
+            </div>
+
+            {% if not comments.is_leaf_node %}
+                <div class="children">
+                    {{ children }}
+                </div>
+            {% endif %}
+            </div>
+
+            {% endwith %}
+        {% endrecursetree %}
+        </div>
+        </div>
+        <div class="col-md-3">
+            <form class="form-inline" >
+                <label for="body"><strong>查找关心的内容：</strong></label>
+                <input type="text" class="form-control mb-2 mr-sm-2" name="search" placeholder="输入关键字...">
+                <button class="btn btn-success btn-sm" href="{% url 'talk:user_talk' %}?search={{ search }}">搜索</button>
+            </form>
+            <h4>最热话题：</h4>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="pagination row center-block" align="center">
+    <div class="m-auto">
+        <span class="step-links" >
+            <!-- 如果不是第一页，则显示上翻按钮 -->
+            {% if comments.has_previous %}
+                <a href="?page= {{ comments.previous_page_number }}&search={{ search }}" class="btn btn-success btn-sm">
+                    &laquo; 上一页
+                </a>
+                <a href="?page=1&search={{ search }}" class="btn btn-danger btn-sm">
+                    首页
+                </a>
+
+                <span>...</span>
+                <a href="?page={{ comments.previous_page_number }}&search={{ search }}"
+                   class="btn btn-secondary">
+                    {{ comments.previous_page_number }}
+                </a>
+            {% endif %}
+
+            <!-- 当前页面 -->
+            <span class="current btn btn-danger btn-sm">
+                {{ comments.number }}
+            </span>
+
+            <!-- 如果不是最末页，则显示下翻按钮 -->
+            {% if comments.has_next %}
+                <a href="?page={{ comments.next_page_number }}&search={{ search }}"
+                   class="btn btn-secondary">
+                    {{ comments.next_page_number }}
+                </a>
+                <span>...</span>
+                <a href="?page={{ comments.next_page_number }}&search={{ search }}" class="btn btn-success btn-sm">
+                    下一页&raquo;
+                </a>
+                <a href="?page={{ comments.next_page_number }}&search={{ search }}" class="btn btn-danger btn-sm">
+                    尾页
+                </a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+</div>
+
+{% include 'back_to_top_func.html' %}
+<span class ="blank" style="height:100px;"></span>
+</body>
+{% include 'footer.html' %}
+<script>
+    $(".django-ckeditor-widget").removeAttr('style');
+</script>
+
+<!-- 新增代码，唤醒二级回复的 modal -->
+<script>
+    function load_modal(comment_id) {
+    let modal_body = '#modal_body_' + comment_id;
+    let modal_id = '#comment_' + comment_id;
+
+    // 加载编辑器
+    if ($(modal_body).children().length === 0) {
+        let content = '<iframe src="/talk/talk-user/' +
+            comment_id +
+            '" frameborder="0" style="width: 100%; height: 80%;"></iframe>';
+        $(modal_body).append(content);
+    };
+
+    $(modal_id).modal('show');
+}
+</script>
+</html>

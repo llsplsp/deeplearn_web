@@ -1,0 +1,36 @@
+{% extends "base_buttom.html" %}
+{% load static %}
+{% block title %}
+Login
+{% endblock %}
+{% block content %}
+    <div class="row text-center vertical-middle-sm">
+        <h1>用户登录界面</h1>
+        <p>
+            请输入用户名和密码：
+        </p>
+        <form class="form-horizontal" action="{% url  'account:user_login' %}" method="post">{% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.password.id_for_label }}" class="col-md-5 control-label"
+                       style="color: red">
+                    <span  class="glyphicon glyphicon-user"></span>
+                    用户名
+                </label>
+                <div class="col-md-6 text-left">{{ form.username}}</div>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password.id_for_label }}" class="col-md-5 control-label"
+                       style="color: blue">
+
+                    <span  class="glyphicon glyphicon-ok"></span>
+                    密码
+                </label>
+                <div class="col-md-6 text-left">{{ form.password }}</div>
+            </div>
+            <input type="submit" class="btn btn-success btn-sm" value="登录">
+{#            <a href="{% url "account:user_register" %}" class="btn btn-success btn-sm">注册</a>#}
+{#            <P><br/>忘记密码？<br/>点击这里<a href="{% url "account:password_reset" %}">重置密码。</a></P>#}
+
+        </form>
+    </div>
+{% endblock %}

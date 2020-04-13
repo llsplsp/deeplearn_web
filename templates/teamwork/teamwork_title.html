@@ -1,0 +1,113 @@
+{% include 'header.html' %}
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}工作概况{% endblock %}</title>
+<style>
+    .blank{ clear:both; overflow:hidden; display:block; overflow:hidden;}
+</style>
+</head>
+<body style="background: #f0efd0;">
+<div class="container">
+    <div class="row text-center vertical-middle-sm">
+        <h1>最近工作概况</h1>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <form class="form-inline" >
+                    <input type="text" class="form-control mb-2 mr-sm-2" name="search" placeholder="输入关键字...">
+                    <button class="btn btn-success btn-sm" href="{% url 'teamwork:team_work' %}?search={{ search }}">搜索</button>
+                </form>
+                {% if search %}
+                {% if workWrite %}
+                <h4><span style="color: red">"{{ search }}"</span>的搜索结果如下：</h4>
+                {% else %}
+                <h4>暂无<span style="color: red">"{{ search }}"</span>有关的内容。</h4>
+        {% endif %}
+    {% endif %}
+            </div>
+            <div class="col-md-3 col-md-offset-4">
+                    <h4>TOP5-热度排序：</h4>
+            </div>
+    </div>
+
+    <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+        {% for work in workWrite %}
+       <h4>
+           <a href="{{ work.id }}">
+                {{ work.id }}.{{ work.title }}
+           </a>
+       </h4>
+         {% endfor %}
+    </div>
+    <div class="col-md-4">
+        {% for work in workWrite %}
+       <h4>
+           {{ work.publish }}
+       </h4>
+         {% endfor %}
+    </div>
+    <div class="col-md-3">
+    {% for work in order_new %}
+       <h4>
+           <a href="{{ work.id }}">
+                {{ work.id }}.{{ work.title }}
+           </a>
+       </h4>
+    {% endfor %}
+    </div>
+    </div>
+    <div class="pagination row center-block" align="center">
+    <div class="m-auto">
+        <span class="step-links" >
+
+            <!-- 如果不是第一页，则显示上翻按钮 -->
+            {% if workWrite.has_previous %}
+                <a href="?page= {{ workWrite.previous_page_number }}&search={{ search }}" class="btn btn-success btn-sm">
+                    &laquo; 上一页
+                </a>
+                <a href="?page=1&search={{ search }}" class="btn btn-danger btn-sm">
+                    首页
+                </a>
+
+                <span>...</span>
+                <a href="?page={{ workWrite.previous_page_number }}&search={{ search }}"
+                   class="btn btn-secondary">
+                    {{ workWrite.previous_page_number }}
+                </a>
+            {% endif %}
+
+            <!-- 当前页面 -->
+            <span class="current btn btn-danger btn-sm">
+                {{ workWrite.number }}
+            </span>
+
+            <!-- 如果不是最末页，则显示下翻按钮 -->
+            {% if workWrite.has_next %}
+                <a href="?page={{ workWrite.next_page_number }}&search={{ search }}"
+                   class="btn btn-secondary">
+                    {{ workWrite.next_page_number }}
+                </a>
+                <span>...</span>
+                <a href="?page={{ workWrite.next_page_number }}&search={{ search }}" class="btn btn-success btn-sm">
+                    下一页&raquo;
+                </a>
+                <a href="?page={{ workWrite.next_page_number }}&search={{ search }}" class="btn btn-danger btn-sm">
+                    尾页
+                </a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+</div>
+</body>
+<span class ="blank" style="height:100px;"></span>
+</html>
+{% include "footer_buttom.html" %}

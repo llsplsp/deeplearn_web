@@ -1,0 +1,76 @@
+{% load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <title>用户等级提升界面</title>
+</head>
+<body style="background: #f0efd0">
+<div class="container">
+    <div class="row text-center">
+      <h3>请核对本次测试信息，点击开始考试</h3>
+      <table class="table">
+          <thead >
+                <tr>
+                    <th  class="text-center">用户编号</th>
+                </tr>
+                <tr>
+                    <th  class="text-center">您的姓名</th>
+                </tr>
+                <tr>
+                    <th class="text-center">考试类别(普通用户-志愿者-专家)</th>
+                </tr>
+                <tr>
+                    <th  class="text-center">题目发布时间</th>
+                </tr>
+                <tr>
+                    <th  class="text-center">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for paper1 in paper %}
+            <tr class="text-center">
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ paper1.subject }}{{ paper2.subject }}</td>
+                <td>{{ paper1.examtime }} {{ paper2.examtime }}</td>
+                <td>
+                    <a href="{% url 'classmanage:class_exam' %}">
+                        <button class="btn btn-success">开始考试</button>
+                    </a>
+
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+      </table>
+    </div>
+{#    <div id="menu2" class="container tab-pane fade"><br>#}
+{#      <h3>考试成绩</h3>#}
+{#        <table class="table">#}
+{#        <thead>#}
+{#          <tr>#}
+{#            <th>姓名</th>#}
+{#            <th>科目</th>#}
+{#            <th>成绩</th>#}
+{#          </tr>#}
+{#        </thead>#}
+{#    <tbody>#}
+{#    {% for grade1 in grade %}#}
+{#        <tr class="table-primary">#}
+{#            <td>{{ user.name }}</td>#}
+{#            <td>{{ grade1.subject }}</td>#}
+{#            <td>{{ grade1.grade }}</td>#}
+{#        </tr>#}
+{#    {% endfor %}#}
+{#    </tbody>#}
+{#  </table>#}
+{#    </div>#}
+</div>
+</body>
+{% include 'footer.html' %}
+<script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</html>

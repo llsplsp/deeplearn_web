@@ -1,0 +1,19 @@
+{% load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    {% block javascript %}{% endblock %}
+</head>
+<body style="background: #f0efd0">
+{% block content %}
+
+{% endblock %}
+</body>
+{% include 'footer.html' %}
+</html>

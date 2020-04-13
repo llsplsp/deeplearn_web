@@ -1,0 +1,37 @@
+{% load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width",initial-scale="1">
+    <title>{% block title %}开始答题{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "/css/bootstrap.css" %}">
+</head>
+<body style="background: #f0efd0" class="text-center">
+    <div class="container">
+        <div class="row">
+            <br/><br/>
+        </div>
+        <div class="row">
+            <h4>
+                答题须知:在规定时间内，完成正确的图片标记。本次答题数目共十题。总分100分。90分合格。
+            </h4>
+        </div>
+        <div class='row'>
+        <br/> <br/> <br/>
+        </div>
+        <hr>
+        <div class="row">
+            <p id="demo"></p>
+        </div>
+        <div class="row">
+{#            <a class="btn btn-success btn-lg" href="{% url 'classmanage:class_subject' %}">#}
+            <a class="btn btn-success btn-lg" href="{% url 'classmanage:class_exam' %}">
+                点击进入测试
+            </a>
+        </div>
+    </div>
+</body>
+{% include "footer_buttom.html" %}
+</html>

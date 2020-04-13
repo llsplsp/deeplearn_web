@@ -1,0 +1,48 @@
+{% load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}编辑工作概况{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/pygments-css-master/colorful.css' %}">
+    <link rel="stylesheet" href="{% static 'editor/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'editor/css/editormd.css' %}">
+<style>
+    .blank{ clear:both; overflow:hidden; display:block; overflow:hidden;}
+</style>
+</head>
+<body style="background: #f0efd0;">
+<div class="container">
+    <div class="row text-center vertical-middle-sm">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h3>编辑工作概况</h3>
+            <hr/>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form method="post" action=".">{% csrf_token %}
+                <div class="form-group">
+                    <label for="title">标题</label>
+                    <input type="text" class="form-control" id="title" name="title" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="body">正文</label>
+                    <textarea type="text" class="form-control" id="body" name="body" rows="8" required="required" placeholder="使用markdown语法编辑效果更好哦"></textarea>
+                </div>
+                <button type="submit" class="btn btn-danger btn-sm">完成</button>
+                <a class="btn btn-success btn-sm" href="{% url 'teamwork:team_work' %}">返回</a>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+<span class ="blank" style="height:100px;"></span>
+</body>
+
+</html>
+{% include "footer.html" %}
